@@ -1,0 +1,179 @@
+@charset "utf-8";
+*{margin: 0; padding: 0; box-sizing: border-box;}
+a{text-decoration: none; color: inherit;}
+ul, li, ol{list-style: none;}
+
+/* <!-- ////////1. 인라인 구조//////// --> */
+/* 블럭구조의 특징
+    -부모의 width를 100% 상속
+    -상속이 안되는 경우 ; float, position, flex, grid 적용 했을 때
+    -부모의 height는 상속받지 못함. 높이는 내용만큼 생성
+    -부모의 width 100% 상속받고, 자신의 width를 다 사용하면 margin: 0 auto;가 의미 없다.
+    -margin: 0 auto;는 부모의 100%중에 내 width를 일부만 사용할 경우 가운데 정렬
+    */
+
+h1{text-align: center; padding-top: 70px;}
+body{background-color: lemonchiffon;}
+
+.list{
+    /* border: 1px solid tomato; */
+    margin: 100px 0;
+    text-align: center;
+}
+
+.list li{
+    /* border: 1px solid gold; */
+    display: inline-block;
+    width: 200px;
+}
+
+/* 인라인 구조 : span b input textarea button img 등
+width, height 내용만큼. 입력해도 안먹힘
+패딩&마진 위아래 안먹힘 좌우만 먹힘
+인라인의 속성은 부모에게 부여
+*/
+.list li a{
+    background-color: salmon;
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 900;
+    color: white;
+    text-transform: uppercase;
+}
+
+    .bg{
+        background-color: rgb(121, 188, 255) !important;
+        border: 2px solid darkblue;
+    }
+
+
+
+/* <!-- ////////2. 플롯 구조//////// --> */
+    /* 플롯은 자기 자신 포함, 나란히 보일 모든 것에 걸어줘야한다 
+    width는 내 내용만큼만 잡힌다. 상속X 
+    부모의 높이가 지정하지 않으면 0이 된다. -> 다음개체가 따라 올라옴
+    +++ 나/부모width: ; 설정 OR 부모에게 overflow: hidden; OR 다음개체에게 clear:both;
+    */
+
+
+.list1{
+    /* border: 1px solid tomato; */
+    overflow: hidden;
+    
+    /* 가운데 정렬은 부모에게 */
+    margin: 50px auto;
+    width: 1000px; /* a의 width 200*5 */
+}
+
+.list1 li{
+    /* border: 1px solid gold; */
+    float: left;
+
+}
+
+.list1 li a{
+    display: block;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: pink;
+    border-radius: 50px;
+    
+}
+
+.txt{
+    font-weight: 900;
+    text-shadow: 0 0 10px black;
+    font-size: 20px;
+}
+
+
+/* <!-- ////////3. 플렉스 구조 = 꼬치방향 //////// --> */
+
+.list2{
+    /* border: 1px solid tomato; */
+    display: flex;
+    height: 150px;
+    /* flex-direction: row; 기본 */
+    /* flex-direction: column; 적층  */
+    /* 꼬치가 한 줄 일 때 가로중앙정렬 방법 */
+    /* justify-content: center;  */
+    /* justify-content: flex-start; 기본  */
+    /* justify-content: flex-end; 오른쪽부터 시작 */
+    /*justify-content: space-between;  양끝은 붙고 n빵 */
+    justify-content: space-around; /*n빵 */
+    
+    /* 꼬치가 한 줄 일 때 세로중앙정렬 방법 */
+    /* align-items: flex-end; 아래에 붙이기 */
+    align-items: center; /* 중앙에 붙이기 */
+
+}
+    
+    .list2 li{
+        height: 80px;
+        /* border: 1px solid gold; */
+        
+    }
+    
+    .list2 li a{
+        display: block;
+        padding: 10px 30px;
+        background-color: powderblue;
+        height: 100%;
+        line-height: 1.5;
+        color: white;
+        font-size: 2rem;
+        font-weight: 900;
+    }
+    
+    .box_over{border-radius: 50%; 
+        box-shadow: 0 0 15px powderblue;
+    transform: scale(2);}
+    
+    /* <!-- ////////4. 그리드 구조//////// --> */
+    
+    .list3{
+        /* border: 1px solid tomato; */
+        margin: 100px 0;
+        display: grid;
+        /* grid-template-columns: 200px 200px 200px 200px 200px; */
+        /* grid-template-columns: repeat(5, 200px); */
+        grid-template-columns: repeat(5, 1fr); /*1fr ;  부모의 width 값을 n빵 */
+        gap: 20px;
+    }
+
+    .list3 li{
+        /* border: 1px solid gold; */
+
+    }
+    .list3 li a{
+        display: block;
+        background-color: thistle;
+        color: white;
+        border-radius: 50px;
+        padding: 20px 30px;
+        font-weight: 900;
+        font-size: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        
+    }
+
+    .grid_bg{
+        background-color: darkorchid !important;
+        border-radius: 0 !important;
+        transform: rotate(10deg);
+    }
+
+    .grid_cl{
+        text-shadow: 0 0 10px black !important;
+        color: chartreuse !important;
+        font-size: 4rem !important;
+    }
+
+
+
+
+

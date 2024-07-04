@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 플립시키기</title>
+
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        body{background: radial-gradient(circle, rgb(228, 105, 240, 1) 8%, rgba(63,94,251,1) 77%);
+            color: #bd84fd; }
+
+        .wrap{
+            display: flex;
+            justify-content: space-around;
+            padding: 100px 0;
+        }
+
+        .box{
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        .box:hover .flip{transform: rotateY(180deg);}
+
+        .flip{
+            position: relative;
+            width: 400px; height: 600px;
+            transition: all 1s ease-in-out;
+            transform-style: preserve-3d;
+        }
+
+        .face{
+            width: 400px; height: 600px;
+            border-radius: 50px;
+            overflow: hidden;
+            border-radius: 50px;
+            position: absolute;
+            border: 15px solid #C65BCF;
+            backface-visibility: hidden;
+        }
+
+        .face img{}
+        
+        .front{}
+
+        .back{
+            background: rgb(242,123,189);
+            background: linear-gradient(41deg, rgb(123, 135, 242, 1) 13%, rgba(246,30,147,1)60%,  rgba(160,81,238,1) 96%);
+            text-align: center;
+            font-size: 60px;
+            font-weight: 900;
+            line-height: 600px;
+            transform: rotateY(180deg);
+
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="box">
+            <div class="flip">
+                <div class="face front"><img src="img/1111.jpg" alt="bb"></div>
+                <div class="face back">★★★★★</div>
+            </div> <!-- flip -->
+        </div> <!-- box -->
+
+        <div class="box">
+            <div class="flip">
+                <div class="face front"><img src="img/1112.jpg" alt="bb"></div>
+                <div class="face back">★★★★</div>
+            </div> <!-- flip -->
+        </div> <!-- box -->
+
+        <div class="box">
+            <div class="flip">
+                <div class="face front"><img src="img/1113.jpg" alt="bb"></div>
+                <div class="face back">★★★</div>
+            </div> <!-- flip -->
+        </div> <!-- box -->
+
+        <div class="box">
+            <div class="flip">
+                <div class="face front"><img src="img/1114.jpg" alt="bb"></div>
+                <div class="face back">★★</div>
+            </div> <!-- flip -->
+        </div> <!-- box -->
+    </div> <!-- wrap -->
+
+
+</body>
+</html>

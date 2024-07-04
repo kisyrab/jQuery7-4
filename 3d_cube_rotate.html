@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5; url=card_img_flip.html">
+    <!-- <meta http-equiv="refresh" content="5; url=http://naver.com"> -->
+
+    <title>Neon Cube!</title>
+
+    <style>
+        *{margin: 0; padding: 0;}
+        html, body{height: 100%;}
+        body{background: #000; transform-style: preserve-3d;}
+
+        .cube{
+            width: 100px; height: 100px;
+            position: absolute;
+            left: 0; top: 0; right: 0; bottom: 0;
+            margin: auto;
+            transform-style: preserve-3d;
+            animation: rotate 5s infinite alternate-reverse;
+            /* perspective: 1000px; */
+        }
+
+        @keyframes rotate{
+            100%{transform: rotateX(360deg) rotateY(180deg) rotateZ(270deg); }
+        }
+
+
+        .face{
+            width: 100px; height: 100px;
+            text-align: center; line-height: 100px;
+            position: absolute;
+            box-shadow:inset 10px 10px rgba(0, 0, 0, 0.1);
+            /* box-shadow: rgb(0, 0, 0 .1) 20px 10px 0px 0px inset; */
+        }
+        
+        .front{
+            background: #FF204E;
+            /* box-shadow: 0 0 1px #FF204E; */
+            transform: translateZ(50px);
+        }
+        
+        .back{
+            background: #EBF400;
+            /* box-shadow: 0 0 1px #EBF400; */
+            transform: translateZ(-50px);
+        }
+        
+        .left{
+            background: #FF00E4;
+            /* box-shadow: 0 0 1px #FF00E4; */
+            transform: translateX(-50px) rotateY(90deg);
+        }
+        
+        .right{
+            background: #08F7FE;
+            /* box-shadow: 0 0 1px #08F7FE; */
+            transform: translateX(50px) rotateY(90deg);
+        }
+        
+        .top{
+            background: #7fff00;
+            /* box-shadow: 0 0 1px #7fff00; */
+            transform: translateY(-50px) rotateX(90deg);
+        }
+        
+        .bottom{
+            background: #011FFD;
+            /* box-shadow: 0 0 1px #011FFD; */
+            transform: translateY(50px) rotateX(90deg);
+            
+
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div class="cube">
+        <div class="face front">●</div>
+        <div class="face back">●</div>
+        <div class="face left">●</div>
+        <div class="face right">●</div>
+        <div class="face top">●</div>
+        <div class="face bottom">●</div>
+    </div>
+
+
+</body>
+</html>

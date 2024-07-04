@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입체버튼애니매이션</title>
+    
+
+    <style>
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        ul, il, ol{list-style: none;}
+        a{text-decoration: none; color: inherit;}
+
+        body{
+            /* background: black;  */
+            background: rgb(100,171,255);
+            background: radial-gradient(circle, rgba(100,171,255,1) 0%, rgba(255,0,112,1) 100%);
+            text-align: center; padding: 250px;
+        transform-style: preserve-3d; perspective: 1000px;
+        }
+
+        @font-face {
+    font-family: 'LOTTERIACHAB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/LOTTERIACHAB.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+        .button{
+            display: inline-block;
+            padding: 70px; 
+            border: 15px solid #ff74ae;
+            background: linear-gradient(#E90074, #ffb5da) ;
+            box-shadow: 0 15px 0 #79003c, 0 3px 15px #ffcae5, 
+            inset 0 1px 0 rgba(255, 255, 255, .5),
+            inset 0 0 3px rgba(255, 255, 255, .7);
+            border-radius: 50%;
+            /* font-weight: 900; */
+            color: #fff;
+            font-size: 5rem;
+            transform: rotateX(30deg);
+            transition: all 1s;
+            font-family: 'LOTTERIACHAB';
+        }
+
+        .button:hover{
+            background: linear-gradient(#ffb5da, #E90074) ;
+            box-shadow: 0 5px 0 #79003c, 0 3px 15px #ffcae5, 
+            inset 0 1px 0 rgba(255, 255, 255, .5),
+            inset 0 0 3px rgba(255, 255, 255, .7);
+        }
+
+        .button:active{
+            transform: rotateX(0deg);
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <a href="#" class="button">Press Me!</a>
+
+</body>
+</html>
